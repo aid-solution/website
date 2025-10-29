@@ -17,6 +17,7 @@ const Consulting = () => {
     setValue,
     getValues,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<ConsultingFormValues>({
     resolver: zodResolver(consultingSchema),
@@ -44,6 +45,7 @@ const Consulting = () => {
     try {
       await requestQuote(data);
       setToast({ status: "success", message: "Votre demande a été envoyé avec succès !" });
+      reset();
     } catch (err) {
       setToast({ status: "error", message: "Une erreur est survenue lors de l'envoi de la demande." });
     } finally {

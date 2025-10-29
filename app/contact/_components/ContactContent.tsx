@@ -33,6 +33,7 @@ const ContactContent = () => {
     getValues,
     setValue,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
@@ -59,6 +60,7 @@ const ContactContent = () => {
     try {
       await sendContact(data);
       setToast({ status: "success", message: "Votre message a été envoyé avec succès !" });
+      reset();
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setToast({ status: "error", message: "Une erreur est survenue lors de l'envoi du message." });
