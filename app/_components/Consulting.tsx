@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { /* ChangeEvent, */ useEffect, useState } from "react";
 import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -38,7 +38,7 @@ const Consulting = () => {
     status: null,
     message: "",
   });
-  const [onFocus, setOnFocus] = useState<boolean>(false)
+  /* const [onFocus, setOnFocus] = useState<boolean>(false) */
 
   const onSubmit = async (data: ConsultingFormValues) => {
     setLoading(false);
@@ -46,6 +46,7 @@ const Consulting = () => {
       await requestQuote(data);
       setToast({ status: "success", message: "Votre demande a été envoyé avec succès !" });
       reset();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setToast({ status: "error", message: "Une erreur est survenue lors de l'envoi de la demande." });
     } finally {
@@ -53,7 +54,7 @@ const Consulting = () => {
     }
   }
 
-  const handleFocus = () => {
+  /* const handleFocus = () => {
     setOnFocus(true);
   }
 
@@ -87,7 +88,7 @@ const Consulting = () => {
     const value = test ? test.replace("&#10078;", "") : data;
     setValue(name as keyof ConsultingFormValues, value);
     handleHideDatalist();
-  }
+  } */
 
   return (
     <div className="px-2 md:px-[100px] py-[50px]" id="consulting">

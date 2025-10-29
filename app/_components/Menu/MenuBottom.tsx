@@ -147,7 +147,7 @@ const MenuBottom: React.FC = () => {
       {
         social.facebook 
           ? (
-            <div className={`flex gap-5 me-[-15px] z-10 justify-center fixed right-1/2 md:right-20 bottom-0`}>
+            <div className={`flex gap-5 me-[-15px] z-10 justify-center fixed md:right-20 ps-5 md:ps-0 bottom-0`}>
               <FacebookIframe social={social} showSocialMedia={showSocialMedia} />
             </div>
           )

@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 interface SocialSwich {
   facebook: boolean;
   twitter: boolean;
@@ -14,11 +12,8 @@ interface Props {
 }
 
 const FacebookIframe: React.FC<Props> = ({social, showSocialMedia }) => {
-
-  
-
   return (
-    <div className="max-w-xl mx-auto pb-15 md:pb-4">
+    <div className="max-w-xl mx-auto md:pb-4">
       {
         social.facebook && (
           <>
